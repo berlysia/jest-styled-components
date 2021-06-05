@@ -9,6 +9,7 @@ const toMatchSnapshot = component => {
   expect(shallow(component)).toMatchSnapshot('shallow');
   expect(mount(component)).toMatchSnapshot('mount');
   expect(render(component).container.firstChild).toMatchSnapshot('react-testing-library');
+  expect(render(component).asFragment()).toMatchSnapshot('react-testing-library asFragment');
 };
 
 const shallowWithTheme = (tree, theme) => {
@@ -249,6 +250,7 @@ it('referring to other components', () => {
   expect(renderer.create(component).toJSON()).toMatchSnapshot('react-test-renderer');
   expect(mount(component)).toMatchSnapshot('mount');
   expect(render(component).container.firstChild).toMatchSnapshot('react-testing-library');
+  expect(render(component).asFragment()).toMatchSnapshot('react-testing-library asFragment');
 });
 
 it('referring to other unreferenced components', () => {
