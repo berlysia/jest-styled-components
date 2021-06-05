@@ -107,7 +107,9 @@ module.exports = {
     return (
       val &&
       !val[KEY] &&
-      (val.$$typeof === Symbol.for('react.test.json') || (global.Element && val instanceof global.Element))
+      (val.$$typeof === Symbol.for("react.test.json") ||
+        (global.Element && val instanceof global.Element) ||
+        (global.DocumentFragment && val instanceof global.DocumentFragment))
     );
   },
 

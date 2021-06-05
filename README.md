@@ -235,6 +235,17 @@ test('it works', () => {
 })
 ```
 
+And also works with `asFragment()`:
+
+```js
+import { render } from '@testing-library/react'
+
+test('it works', () => {
+  const { asFragment } = render(<Button />)
+  expect(asFragment()).toMatchSnapshot()
+})
+```
+
 > The snapshots will contain `class` instead of `className` because the snapshots are of DOM elements
 
 ## Theming
